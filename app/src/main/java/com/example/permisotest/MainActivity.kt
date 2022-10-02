@@ -64,10 +64,12 @@ class MainActivity : AppCompatActivity() {
         }
         alert.show()
         bindingBottom.imgCamera.setOnClickListener {
+            code_result = CODE_RESULT.CAMERA
             TakePhoto()
             alert.dismiss()
         }
         bindingBottom.imgGallery.setOnClickListener {
+
             GetGallery()
             alert.dismiss()
         }
@@ -93,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                 })
             }
             else -> {
+                code =CODE_PERMISSION.GALLERY
                 getPermision.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
             }
         }
